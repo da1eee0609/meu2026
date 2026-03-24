@@ -57,6 +57,11 @@
         .news-section { font-size: 11px; color: #333; }
         .news-title { font-weight: bold; color: #238db3; margin-bottom: 5px; display: block; }
 
+        /* 사진첩 스타일 */
+        .photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .photo-item { border: 1px solid #ddd; padding: 5px; text-align: center; background: #fff; }
+        .photo-item img { width: 100%; height: 120px; object-fit: cover; }
+        
             /* 사이드 메뉴 */
         .side-menu { position: absolute; right: -55px; top: 60px; display: flex; flex-direction: column; gap: 4px; }
         .menu-btn {
@@ -71,7 +76,7 @@
 <div class="outer-box">
     <div class="inner-box">
         <div class="left-section">
-            <div class="visitor-count">TODAY <b>520</b> | TOTAL 1994</div>
+            <div class="visitor-count">TODAY <b>609</b> | TOTAL 2008</div>
             <div class="profile-container">
                 <img src="https://raw.githubusercontent.com/da1eee0609/meu2026/main/0325.gif" alt="Profile">
             </div>
@@ -82,7 +87,7 @@
         </div>
 
         <div class="main-section">
-            <div class="main-title">♡너의곁으로♡ <span style="font-weight:normal; font-size:10px; color:#999; margin-left:10px;">http://www.cyworld.com/...</span></div>
+            <div class="main-title">♡미유밖에 모르는 바부~♡ <span style="font-weight:normal; font-size:10px; color:#999; margin-left:10px;">http://www.cyworld.com/...</span></div>
             
             <div class="miniroom-area"></div>
             
@@ -91,6 +96,26 @@
                 <p>● [공지] 생일 카페 이벤트 안내</p>
                 <p>● [사진] 이번 앨범 컨셉 미쳤다ㅠㅠ</p>
                 <p>● [일기] 벌써 생일이라니 시간 빠르다</p>
+            </div>
+        </div>
+    </div>
+    <div id="photo" class="content-area">
+                <b>Photo Album</b><hr>
+                <div class="photo-grid">
+                    <div class="photo-item"><img src="이미지주소1"><span>입덕부정기</span></div>
+                    <div class="photo-item"><img src="이미지주소2"><span>레전드 무대</span></div>
+                    <div class="photo-item"><img src="이미지주소3"><span>오늘의 픽셀</span></div>
+                </div>
+            </div>
+
+            <div id="guest" class="content-area">
+                <b>Guestbook</b><hr>
+                <div class="input-group">
+                    <input type="text" placeholder="축하 메시지 남기기" style="flex:1;">
+                    <button style="font-size:11px;">확인</button>
+                </div>
+                <div style="border-bottom:1px dashed #ddd; padding:5px;"><b>팬1</b>: 도토리 10개 선물하고 가요!</div>
+                <div style="border-bottom:1px dashed #ddd; padding:5px;"><b>팬2</b>: 사이트 너무 예뻐요ㅠㅠ</div>
             </div>
         </div>
     </div>
