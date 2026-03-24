@@ -129,18 +129,19 @@
             </div>
         </div>
 
-        <div class="right-sidebar">
-            <div class="sidebar-box">
-                <div class="sidebar-title">싸이 BGM</div>
-                <ul class="music-list">
-                    <li style="color:#ff8a00">▶ NERDY - ifeye</li>
-                    <li>2. r u ok? - ifeye</li>
-                </ul>
-            </div>
-            <div class="sidebar-box">
-                <div class="sidebar-title">마이심볼</div>
-                <div style="text-align:center; padding:10px; font-size: 15px;">☀️ ☁️ ☂️</div>
-            </div>
+        <div class="right-sidebar">   
+        <div class="sidebar-box">
+    <div class="sidebar-title">싸이 BGM</div>
+    <audio id="my-bgm" src="https://raw.githubusercontent.com/da1eee0609/meu2026/main/byesummer.mp3" loop></audio>
+    
+    <ul class="music-list">
+        <li id="bgm-item" style="color:#666; cursor:pointer; font-weight:normal;" onclick="toggleBgm()">
+            <span id="bgm-status">▷</span> 1. 너의 곁으로 - 유주
+        </li>
+        <li style="color:#999;">2. 잘가요 - 조성모</li>
+        <li style="color:#999;">3. 벌써 일년 - 브라운아이즈</li>
+    </ul>
+</div>
         </div>
     </div>
 
@@ -182,6 +183,28 @@
         list.insertBefore(newComment, list.firstChild);
         input.value = "";
     }
+
+    // BGM
+    function toggleBgm() {
+    const bgm = document.getElementById('my-bgm');
+    const bgmItem = document.getElementById('bgm-item');
+    const bgmStatus = document.getElementById('bgm-status');
+    
+    if (bgm.paused) {
+        // 재생 시작
+        bgm.play();
+        bgm.volume = 0.4; // 너무 크지 않게 볼륨 조절
+        bgmStatus.innerText = "▶"; // 꽉 찬 화살표로 변경
+        bgmItem.style.color = "#ff8a00"; // 재생 중일 때 주황색으로 변경
+        bgmItem.style.fontWeight = "bold";
+    } else {
+        // 정지
+        bgm.pause();
+        bgmStatus.innerText = "▷"; // 빈 화살표로 변경
+        bgmItem.style.color = "#666"; // 원래 색으로 복구
+        bgmItem.style.fontWeight = "normal";
+    }
+}
 </script>
 
 </body>
